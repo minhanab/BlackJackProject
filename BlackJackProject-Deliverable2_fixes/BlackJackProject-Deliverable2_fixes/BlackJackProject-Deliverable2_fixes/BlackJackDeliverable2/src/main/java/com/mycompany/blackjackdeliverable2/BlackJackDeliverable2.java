@@ -4,7 +4,7 @@
  */
 package com.mycompany.blackjackdeliverable2;
 
-import java.util.List;
+
 
 /**
  *
@@ -17,19 +17,20 @@ public class BlackJackDeliverable2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        BlackJackDeck deck = new BlackJackDeck();
-        List<BlackJackCard> cardsInDeck = deck.getDeck();
-        System.out.println("unshuffled deck: " );
-        for (BlackJackCard card : cardsInDeck){
-            System.out.println(card);
-        }
         
-        deck.shuffle(cardsInDeck);
-        System.out.println("#########################");
-        System.out.println("Shuffled deck");
-        for(BlackJackCard card : cardsInDeck){
-            System.out.println(card);
-        }
+        //initializing deck and player and shuffling the deck, and then as 
+        //the round starts, the player takes 2 cards from the deck
+        BlackJackDeck deck = new BlackJackDeck();
+        deck.createDeck();
+        System.out.println("unshuffled deck: " + deck.getCards());
+        deck.shuffle();
+        System.out.println("Shuffled Deck: " + deck.getCards());
+        
+        Hand playerHand = new Hand(deck);
+        System.out.println("Player Starting Hand: " + playerHand.getCards());
+        System.out.println("Player hand value: " + playerHand.getScore());
+        System.out.println("Deck after Player drew his cards" + deck.getCards());
+
     }
     
 }

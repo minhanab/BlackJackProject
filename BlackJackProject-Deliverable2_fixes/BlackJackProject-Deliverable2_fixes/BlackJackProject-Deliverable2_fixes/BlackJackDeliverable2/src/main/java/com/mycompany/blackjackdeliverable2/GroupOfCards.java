@@ -15,28 +15,29 @@ import java.util.Collections;
  * @author dancye
  * @author Paul Bonenfant Jan 2020
  */
-public class GroupOfCards {
+//group of cards for both the hand and the deck
+public abstract class GroupOfCards {
 
     //The group of cards, stored in an ArrayList
     private ArrayList<Card> cards;
     private int size;//the size of the grouping
 
+    //initializing the specific arrayList for the player / deck when called
+    //size of the hand/deck needed to differentiate
     public GroupOfCards(int size) {
         this.size = size;
+        this.cards = new ArrayList<>();
     }
-
     /**
      * A method that will get the group of cards as an ArrayList
      *
      * @return the group of cards.
      */
+    //returns the array so we can print the cards in hand
     public ArrayList<Card> getCards() {
         return cards;
     }
 
-    public void shuffle() {
-        Collections.shuffle(cards);
-    }
 
     /**
      * @return the size of the group of cards

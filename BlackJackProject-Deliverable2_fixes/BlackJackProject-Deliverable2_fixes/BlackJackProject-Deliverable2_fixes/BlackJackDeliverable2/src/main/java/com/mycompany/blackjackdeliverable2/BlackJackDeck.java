@@ -6,40 +6,37 @@ package com.mycompany.blackjackdeliverable2;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 /**
  *
  * @author spmar
  */
-public class BlackJackDeck  {
-    private BlackJackCard.Suit suit;
-    private BlackJackCard.Rank rank;
-    private List<BlackJackCard> deck;
+public class BlackJackDeck extends GroupOfCards {
     
+    //creates the array for the deck and tells group of cards that its 52 cards
     public BlackJackDeck(){
-        this.deck = createDeck();
+        super(52);
     }
-    public BlackJackDeck(BlackJackCard.Suit suit, BlackJackCard.Rank rank){
-        this.suit = suit;
-        this.rank = rank;
-    }
-    
-    public List<BlackJackCard> createDeck(){
-        List<BlackJackCard> cards = new ArrayList<>();
-        for (BlackJackCard.Suit s: BlackJackCard.Suit.values()){
-            for (BlackJackCard.Rank r: BlackJackCard.Rank.values()){
-                cards.add(new BlackJackCard(s, r));
+    //populates the deck made in group of cards through for loops to make the deck
+    //of 52 cards.
+    public void createDeck(){
+        for (Suit s: Suit.values()){
+            for (Rank r: Rank.values()){
+                this.getCards().add(new BlackJackCard(s, r));
             }
         }
-        return cards;
     }
-    public void shuffle(List<BlackJackCard> deck){
-        Collections.shuffle(deck);
+    //removes 1 card if the deck isnt empty, and then returs the value of that card
+    //for the hand method drawCard to take that value and add it to the deck.
+    public Card dealCard(){
+        if (!this.getCards().isEmpty()){
+            return this.getCards().remove(0);
+        }
+        return null;
+    }
+    //shuffle the cards, so the deck can be shuffled
+    public void shuffle() {
+        Collections.shuffle(this.getCards());
     }
 
-    public List<BlackJackCard> getDeck(){
-        return deck;
-    }
-    
 }
