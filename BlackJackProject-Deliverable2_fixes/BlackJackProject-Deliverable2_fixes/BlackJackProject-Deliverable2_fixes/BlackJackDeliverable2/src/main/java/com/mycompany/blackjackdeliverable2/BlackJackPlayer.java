@@ -6,9 +6,25 @@ package com.mycompany.blackjackdeliverable2;
 
 /**
  *
- * @author USER
-// */
-//public class BlackJackPlayer extends Player {
-//    
-//    
-//}
+ * @author USE
+ * 
+**/
+
+public class BlackJackPlayer extends Player {
+    
+   protected Hand hand;
+    public BlackJackPlayer(String name) {
+        super(name);
+    }
+
+    @Override
+    public void play() {
+        
+    }
+   
+    public Hand getHand() {
+        return hand;
+    }
+    
+  
+}

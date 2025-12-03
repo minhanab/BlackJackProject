@@ -37,7 +37,7 @@ public class User {
     public void registerUser(String username, String password ){
         for (int i = 0; i < userCount; i++) {
             
-            if(users[i]. username.equals(username)) {
+            if(users[i].username.equals(username)) {
                 System.out.println("Username already exists !");
                  
                 return;
@@ -61,14 +61,12 @@ public class User {
     
     public boolean login(String username, String password) {
         for (int i= 0; i < userCount; i++) {
-            if (users[i]. username.equals(username) && users[i].password.equals(password)) {
+            if (users[i].username.equals(username) && users[i].password.equals(password)) {
                 return true;
             }
         }
         
-        return false;
-    
-    
+        return false; 
 }
 
     

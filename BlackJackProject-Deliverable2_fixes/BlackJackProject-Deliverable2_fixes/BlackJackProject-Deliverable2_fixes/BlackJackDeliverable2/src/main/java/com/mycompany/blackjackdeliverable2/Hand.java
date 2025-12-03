@@ -49,5 +49,7 @@ public class Hand extends GroupOfCards{
             this.getCards().add(card);
         }
     }
+
+    
     
 }
