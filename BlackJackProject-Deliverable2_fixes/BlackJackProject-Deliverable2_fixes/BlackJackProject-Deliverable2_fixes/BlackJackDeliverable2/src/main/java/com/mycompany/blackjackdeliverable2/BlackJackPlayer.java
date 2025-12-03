@@ -12,9 +12,10 @@ package com.mycompany.blackjackdeliverable2;
 
 public class BlackJackPlayer extends Player {
     
-   protected Hand hand;
+   protected Hand hand;   
     public BlackJackPlayer(String name) {
         super(name);
+        this.hand = new Hand(BlackJackDeck.getInstance());
     }
 
     @Override

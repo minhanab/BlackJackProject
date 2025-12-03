@@ -15,8 +15,8 @@ public class Hand extends GroupOfCards{
     //then draws 2 cards
     public Hand(BlackJackDeck deck){
         super(2);
-        drawCard(deck);
-        drawCard(deck);
+        this.drawCard(deck);
+        this.drawCard(deck);
     }
     
     //checker for the score of the hand to see if the player busted.
