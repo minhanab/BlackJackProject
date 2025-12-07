@@ -15,8 +15,6 @@ public class Hand extends GroupOfCards{
     //then draws 2 cards
     public Hand(BlackJackDeck deck){
         super(2);
-        this.drawCard(deck);
-        this.drawCard(deck);
     }
     
     //checker for the score of the hand to see if the player busted.
@@ -25,6 +23,20 @@ public class Hand extends GroupOfCards{
     //I might have to seperate the get highscore count and get low score count
     //since maybe we want to show which is which, instead of deciding for the
     //player
+    public int getHighScore(){
+        int highScore = 0;
+        for (Card card: this.getCards()){
+            highScore += card.rank.getHighValue();
+        }
+        return highScore;
+    }
+    public int getLowScore(){
+        int lowScore = 0;
+        for (Card card: this.getCards()){
+            lowScore += card.rank.getLowValue();
+        }
+        return lowScore;
+    }
     public int getScore(){
         int highScoreCount = 0;
         int lowScoreCount = 0;
@@ -49,7 +61,10 @@ public class Hand extends GroupOfCards{
             this.getCards().add(card);
         }
     }
-
+    
+    public void clear(){
+            this.getCards().clear();
+    }
     
     
 }
