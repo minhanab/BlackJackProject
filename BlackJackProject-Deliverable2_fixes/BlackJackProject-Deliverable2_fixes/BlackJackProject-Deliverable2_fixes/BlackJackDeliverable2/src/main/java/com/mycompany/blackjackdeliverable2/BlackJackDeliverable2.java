@@ -4,11 +4,11 @@
  */
 package com.mycompany.blackjackdeliverable2;
 
-import java.util.Scanner;
 
 /**
  *
- * @author spmar
+ * @author Sebastien-Paul Martineau
+ * @author Naba Minhas
  */
 public class BlackJackDeliverable2 {
 

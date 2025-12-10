@@ -37,7 +37,7 @@ public class BlackJackGame extends Game {
 
         System.out.println("\n== BLACKJACK ==");
         System.out.println("First one to 5 points wins the game!");
-        while (playerPoints < 5 && dealerPoints < 5){
+        while (playerPoints < 3 && dealerPoints < 3){
             player.getHand().clear();
             dealer.getHand().clear();
             
@@ -61,7 +61,7 @@ public class BlackJackGame extends Game {
         if (player.getHand().getScore() == 21 || dealer.getHand().getScore() == 21) {
             roundWinner(player, dealer, username);
             scoreShowed = true;
-            continue;
+            break;
         }
         //Player's turn
 

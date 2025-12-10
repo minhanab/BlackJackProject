@@ -6,13 +6,14 @@ package com.mycompany.blackjackdeliverable2;
 
 /**
  *
- * @author USE
+ * @author Sebastien-Paul Martineau
+ * @author Naba Minhas
  * 
 **/
 
 public class BlackJackPlayer extends Player {
     
-   protected Hand hand;   
+   private Hand hand;   
     public BlackJackPlayer(String name) {
         super(name);
         this.hand = new Hand(BlackJackDeck.getInstance());

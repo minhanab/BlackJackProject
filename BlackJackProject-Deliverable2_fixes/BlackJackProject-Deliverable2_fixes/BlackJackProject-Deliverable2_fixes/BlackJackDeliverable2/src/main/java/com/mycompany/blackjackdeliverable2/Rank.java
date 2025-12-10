@@ -6,7 +6,8 @@ package com.mycompany.blackjackdeliverable2;
 
 /**
  *
- * @author spmar
+ * @author Sebastien-Paul
+ * @author naba
  */
 //Rank enum to see what number is on the card
 //need a high and low value for the aces, so we can get a dynamic number and

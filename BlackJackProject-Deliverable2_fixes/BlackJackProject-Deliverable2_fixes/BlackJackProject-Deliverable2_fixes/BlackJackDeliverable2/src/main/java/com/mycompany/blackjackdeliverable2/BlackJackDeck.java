@@ -9,7 +9,8 @@ import java.util.Collections;
 
 /**
  *
- * @author spmar
+ * @author sebastien-Paul Martineau
+ * @author naba minhas
  */
 public class BlackJackDeck extends GroupOfCards {
     private static final int NUM_DECKS = 8;

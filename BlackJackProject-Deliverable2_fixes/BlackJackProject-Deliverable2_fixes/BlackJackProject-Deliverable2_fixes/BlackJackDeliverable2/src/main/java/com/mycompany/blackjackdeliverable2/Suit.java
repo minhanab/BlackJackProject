@@ -6,7 +6,8 @@ package com.mycompany.blackjackdeliverable2;
 
 /**
  *
- * @author spmar
+ * @author Sebastien-Paul
+ * @author naba
  */
 
 //made enum for suits , it being clubs hearts diamonds and spades

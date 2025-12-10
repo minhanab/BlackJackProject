@@ -6,11 +6,12 @@ package com.mycompany.blackjackdeliverable2;
 
 /**
  *
- * @author USER
+ * @author Naba minhas
+ * @author Sebastien-Paul Martineau
  */
 public class BlackJackDealer extends BlackJackPlayer {
 
-    protected Hand hand;
+    private Hand hand;
     
     public BlackJackDealer(String name) {
         super(name);

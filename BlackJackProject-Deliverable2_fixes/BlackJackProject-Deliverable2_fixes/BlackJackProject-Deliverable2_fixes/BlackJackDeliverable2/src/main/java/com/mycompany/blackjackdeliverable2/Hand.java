@@ -7,7 +7,8 @@ package com.mycompany.blackjackdeliverable2;
 
 /**
  *
- * @author spmar
+ * @author Sebastien-Paul Martineau
+ * @author Naba Minhas
  */
 public class Hand extends GroupOfCards{
 

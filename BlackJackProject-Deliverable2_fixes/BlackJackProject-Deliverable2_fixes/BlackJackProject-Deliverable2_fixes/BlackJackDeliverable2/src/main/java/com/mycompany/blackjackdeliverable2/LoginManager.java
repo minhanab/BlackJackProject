@@ -16,7 +16,7 @@ public class LoginManager {
 
     public class User {
 
-        public String username;
+        private String username;
 
         public User(String username) {
             this.username = username;
