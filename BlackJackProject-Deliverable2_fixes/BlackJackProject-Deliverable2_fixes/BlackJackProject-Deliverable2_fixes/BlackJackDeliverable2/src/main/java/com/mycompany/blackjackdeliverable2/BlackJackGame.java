@@ -36,7 +36,7 @@ public class BlackJackGame extends Game {
 
 
         System.out.println("\n== BLACKJACK ==");
-        System.out.println("First one to 5 points wins the game!");
+        System.out.println("First one to 3 points wins the game!");
         while (playerPoints < 3 && dealerPoints < 3){
             player.getHand().clear();
             dealer.getHand().clear();

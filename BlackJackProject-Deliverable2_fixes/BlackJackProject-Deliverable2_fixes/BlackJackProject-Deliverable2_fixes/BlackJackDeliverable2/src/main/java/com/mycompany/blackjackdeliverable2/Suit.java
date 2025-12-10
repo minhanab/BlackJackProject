@@ -13,7 +13,4 @@ package com.mycompany.blackjackdeliverable2;
 //made enum for suits , it being clubs hearts diamonds and spades
 public enum Suit {
     HEARTS, DIAMONDS, CLUBS, SPADES
-    
-    
-    
 }
