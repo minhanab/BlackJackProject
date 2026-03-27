@@ -4,11 +4,11 @@
  */
 package com.mycompany.blackjackdeliverable2;
 
-import java.util.List;
 
 /**
  *
- * @author spmar
+ * @author Sebastien-Paul Martineau
+ * @author Naba Minhas
  */
 public class BlackJackDeliverable2 {
 
@@ -17,19 +17,12 @@ public class BlackJackDeliverable2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        BlackJackDeck deck = new BlackJackDeck();
-        List<BlackJackCard> cardsInDeck = deck.getDeck();
-        System.out.println("unshuffled deck: " );
-        for (BlackJackCard card : cardsInDeck){
-            System.out.println(card);
-        }
-        
-        deck.shuffle(cardsInDeck);
-        System.out.println("#########################");
-        System.out.println("Shuffled deck");
-        for(BlackJackCard card : cardsInDeck){
-            System.out.println(card);
-        }
+        //Ask Professor tomorrow if this is needed for application purposes
+
+        BlackJackGame game = new BlackJackGame("BlackJack");
+
+        game.play();
+
     }
-    
+
 }

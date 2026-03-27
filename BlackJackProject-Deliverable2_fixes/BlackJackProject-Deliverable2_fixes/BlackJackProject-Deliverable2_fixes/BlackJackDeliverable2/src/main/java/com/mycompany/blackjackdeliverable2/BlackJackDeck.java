@@ -6,40 +6,52 @@ package com.mycompany.blackjackdeliverable2;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 /**
  *
- * @author spmar
+ * @author sebastien-Paul Martineau
+ * @author naba minhas
  */
-public class BlackJackDeck  {
-    private BlackJackCard.Suit suit;
-    private BlackJackCard.Rank rank;
-    private List<BlackJackCard> deck;
-    
-    public BlackJackDeck(){
-        this.deck = createDeck();
+public class BlackJackDeck extends GroupOfCards {
+    private static final int NUM_DECKS = 8;
+    private static final int CARD_PER_DECK = 52;
+    private static BlackJackDeck instance = null;
+    //creates the array for the deck and tells group of cards that its 416 cards since 
+    //creating 8 decks of 52 cards
+    private BlackJackDeck(){
+        super(CARD_PER_DECK * NUM_DECKS);
     }
-    public BlackJackDeck(BlackJackCard.Suit suit, BlackJackCard.Rank rank){
-        this.suit = suit;
-        this.rank = rank;
-    }
+    //populates the deck made in group of cards through for loops to make the deck
+    //of 416 cards 
     
-    public List<BlackJackCard> createDeck(){
-        List<BlackJackCard> cards = new ArrayList<>();
-        for (BlackJackCard.Suit s: BlackJackCard.Suit.values()){
-            for (BlackJackCard.Rank r: BlackJackCard.Rank.values()){
-                cards.add(new BlackJackCard(s, r));
+    public static BlackJackDeck getInstance() {
+        if(instance == null) {
+            instance = new BlackJackDeck();
+            instance.createDeck();
+            instance.shuffle();
+        }
+        return instance;
+    }
+    public void createDeck(){
+        for (int i=0; i < 8; i++){
+        for (Suit s: Suit.values()){
+            for (Rank r: Rank.values()){
+                this.getCards().add(new BlackJackCard(s, r));
+                }
             }
         }
-        return cards;
+       }
+    //removes 1 card if the deck isnt empty, and then returs the value of that card
+    //for the hand method drawCard to take that value and add it to the deck.
+    public Card dealCard(){
+        if (!this.getCards().isEmpty()){
+            return this.getCards().remove(0);
+        }
+        return null;
     }
-    public void shuffle(List<BlackJackCard> deck){
-        Collections.shuffle(deck);
+    //shuffle the cards, so the deck can be shuffled
+    public void shuffle() {
+        Collections.shuffle(this.getCards());
     }
 
-    public List<BlackJackCard> getDeck(){
-        return deck;
-    }
-    
 }

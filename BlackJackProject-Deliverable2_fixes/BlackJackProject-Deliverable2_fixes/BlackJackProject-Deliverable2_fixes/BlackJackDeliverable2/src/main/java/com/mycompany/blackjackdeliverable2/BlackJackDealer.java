@@ -6,27 +6,32 @@ package com.mycompany.blackjackdeliverable2;
 
 /**
  *
+ * @author Naba minhas
  * @author Sebastien-Paul Martineau
- * @author Naba Minhas
- * 
-**/
+ */
+public class BlackJackDealer extends BlackJackPlayer {
 
-public class BlackJackPlayer extends Player {
+    private Hand hand;
     
-   private Hand hand;   
-    public BlackJackPlayer(String name) {
+    public BlackJackDealer(String name) {
         super(name);
         this.hand = new Hand(BlackJackDeck.getInstance());
     }
-
-    @Override
+    
+     @Override
     public void play() {
+        BlackJackDeck deck = BlackJackDeck.getInstance();
+        while(this.hand.getScore() < 17) {
+            this.hand.drawCard(deck);
+        }
+        
         
     }
-   
+
     public Hand getHand() {
         return hand;
     }
     
-  
+    
+    
 }
